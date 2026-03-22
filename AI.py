@@ -19,7 +19,7 @@ if question == "Give me a quote.":
     print(f"Sure! A random quote for you: {random_quote}") #In normal ai's the quote scraping should be done when the question is asked, but for now it is done at the beginning.
 #Challenge:
 all_author_names = parsed_quotes.find_all("small",class_="author") 
-author_seen = set()
+author_seen = [""]
 for author in all_author_names:
     if author.text not in author_seen:
         print(author.text)
