@@ -17,3 +17,11 @@ random_quote = random_item.text #this will only print the text of the quote, not
 question = input("What would you like me to do today? Ex: 'Give me a quote.': ")
 if question == "Give me a quote.":
     print(f"Sure! A random quote for you: {random_quote}") #In normal ai's the quote scraping should be done when the question is asked, but for now it is done at the beginning.
+#Challenge:
+all_author_names = parsed_quotes.find_all("small",class_="author") 
+author_seen = set()
+for author in all_author_names:
+    if author.text not in author_seen:
+        print(author.text)
+        author_seen.add(author.text)
+        time.sleep(1)
